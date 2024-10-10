@@ -2,6 +2,7 @@ import 'package:chat_app_firebase/core/constants/images/image_assets.dart';
 import 'package:chat_app_firebase/core/functions/app_routing.dart';
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/login_view.dart';
+import 'package:chat_app_firebase/features/splash_view/presentation/view/widgets/splash_body_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -24,27 +25,8 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-             ImageAssets.logo,
-              width: 200,
-              height: 100,
-            ),
-            const Gap(10),
-            Text('WhatsApp', style: titleText()),
-            const Gap(70),
-            Text(
-              ' The best Chat App in the world',
-              style: bodyText(),
-            )
-          ],
-        ),
-      ),
-    ));
+    return const Scaffold(
+        body: SplashBody());
   }
 }
+
