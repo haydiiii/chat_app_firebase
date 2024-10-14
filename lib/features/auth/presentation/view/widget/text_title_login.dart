@@ -1,0 +1,20 @@
+import 'package:chat_app_firebase/core/theme/colors.dart';
+import 'package:chat_app_firebase/core/theme/style.dart';
+import 'package:flutter/material.dart';
+
+class TextTitleLogin extends StatelessWidget {
+  const TextTitleLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      textAlign: TextAlign.center,
+      'Log in to your account',
+      style: titleText(
+          color: AppColors.blackColor,
+          fontWeight: FontWeight.w700,
+          fontsize: 30,
+          ),
+    );
+  }
+}
