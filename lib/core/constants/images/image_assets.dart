@@ -1,3 +1,3 @@
-class ImageAssets{
-static String logo ='assets/logo-app.png';
+class ImageAssets {
+  static String logo = 'assets/logo.png';
 }

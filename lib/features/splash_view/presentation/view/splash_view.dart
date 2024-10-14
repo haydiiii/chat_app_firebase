@@ -19,14 +19,12 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
 
     Future.delayed(const Duration(seconds: 3), () {
-      pushto(context, const LoginView());
+      pushWithReplacement(context, const LoginView());
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: SplashBody());
+    return const Scaffold(body: SplashBodyWidget());
   }
 }
-

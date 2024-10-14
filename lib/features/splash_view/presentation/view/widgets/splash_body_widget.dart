@@ -4,8 +4,8 @@ import 'package:gap/gap.dart';
 
 import '../../../../../core/constants/images/image_assets.dart';
 
-class SplashBody extends StatelessWidget {
-  const SplashBody({
+class SplashBodyWidget extends StatelessWidget {
+  const SplashBodyWidget({
     super.key,
   });
 
@@ -25,7 +25,7 @@ class SplashBody extends StatelessWidget {
         Text('WhatsApp', style: titleText()),
         const Gap(70),
         Text(
-          ' The best Chat App in the world',
+          ' The Best Chat App in the world',
           style: bodyText(),
         )
       ],
