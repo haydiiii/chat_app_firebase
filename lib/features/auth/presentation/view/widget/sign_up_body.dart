@@ -1,27 +1,31 @@
 import 'package:chat_app_firebase/core/functions/app_routing.dart';
-import 'package:chat_app_firebase/features/auth/presentation/view/signup_view.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/login_view.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/email_text_ffield.dart';
-import 'package:chat_app_firebase/features/auth/presentation/view/widget/login_button.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/widget/login_here.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/logo_widget.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/widget/name_text_ffield.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/password_txt_ffield.dart';
-import 'package:chat_app_firebase/features/auth/presentation/view/widget/register_now.dart';
-import 'package:chat_app_firebase/features/auth/presentation/view/widget/text_title_login.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/widget/phone_text_ffield.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/widget/sign_up_button.dart';
+import 'package:chat_app_firebase/features/auth/presentation/view/widget/text_title_sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class LoginBody extends StatefulWidget {
-  const LoginBody({super.key});
+class SignUpBody extends StatefulWidget {
+  const SignUpBody({super.key});
 
   @override
-  State<LoginBody> createState() => _LoginBodyState();
+  State<SignUpBody> createState() => _SignUpBodyState();
 }
 
 bool isVisible = false;
 TextEditingController passwordController = TextEditingController();
 TextEditingController emailController = TextEditingController();
+TextEditingController nameController = TextEditingController();
+TextEditingController phoneController = TextEditingController();
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-class _LoginBodyState extends State<LoginBody> {
+class _SignUpBodyState extends State<SignUpBody> {
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -33,10 +37,18 @@ class _LoginBodyState extends State<LoginBody> {
             child: Column(
               children: [
                 const LogoWidget(),
-                const TextTitleLogin(),
+                const TextTitleSignUp(),
+                const Gap(20),
+                NameTextFfield(
+                  nameController: nameController,
+                ),
                 const Gap(20),
                 EmailTextFfield(
                   emailController: emailController,
+                ),
+                const Gap(15),
+                PhoneTextFfield(
+                  phoneController: phoneController,
                 ),
                 const Gap(15),
                 PasswordTextFfield(
@@ -49,13 +61,12 @@ class _LoginBodyState extends State<LoginBody> {
                   },
                 ),
                 const Gap(15),
-                const LoginButton(),
+                const SignUpButton(),
                 const Gap(10),
-                RegisterNow(
+                Loginhere(
                   onPressed: () {
-                    pushWithReplacement(context,const SignUpView() );
+                    pushWithReplacement(context, const LoginView());
                   },
-
                 )
               ],
             ),

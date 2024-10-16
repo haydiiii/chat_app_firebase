@@ -1,5 +1,6 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // static const TextStyle title = TextStyle(
 //   fontSize: 24,
@@ -11,6 +12,7 @@ TextStyle titleText({
   Color? color,
   double? fontsize,
   FontWeight? fontWeight,
+  GoogleFonts? font,
 }) {
   return TextStyle(
     fontSize: fontsize ?? 24,
