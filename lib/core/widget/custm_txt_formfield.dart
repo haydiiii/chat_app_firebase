@@ -2,9 +2,9 @@ import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextEditingController controller;
-  final String hintText;
-  final String label;
+  final TextEditingController? controller;
+  final String? hintText;
+  final String ?label;
   final Function()? onTap;
   final Function(String)? onChanged;
   final Function()? onPressed;
@@ -34,6 +34,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,

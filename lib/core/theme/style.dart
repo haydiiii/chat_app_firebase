@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 //   color: AppColors.primaryColor,
 // );
 
-TextStyle titleText({
+TextStyle titleText( {
   Color? color,
   double? fontsize,
   FontWeight? fontWeight,
