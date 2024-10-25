@@ -1,4 +1,8 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
+import 'package:chat_app_firebase/features/calls/presentation/view/calls_view.dart';
+import 'package:chat_app_firebase/features/chats/presentation/view/chats_view.dart';
+import 'package:chat_app_firebase/features/layout/presentation/view/widget/app_bar_of_nav_bar.dart';
+import 'package:chat_app_firebase/features/status/presentation/view/status_view.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -13,13 +17,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
 
   final List<Widget> screens = [
-    
-
+    const ChatsView(),
+    const StatusView(),
+    const CallsView()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const AppBarOfNavBar(),
+      ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
@@ -33,7 +41,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+            icon: Icon(
+              Icons.chat,
+              color: AppColors.primaryColor,
+            ),
             activeIcon: Icon(
               Icons.chat,
               color: AppColors.primaryColor,
@@ -41,7 +52,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Chats',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.lightbulb),
+            icon: Icon(
+              Icons.lightbulb,
+              color: AppColors.primaryColor,
+            ),
             activeIcon: Icon(Icons.lightbulb),
             label: 'Status',
           ),
