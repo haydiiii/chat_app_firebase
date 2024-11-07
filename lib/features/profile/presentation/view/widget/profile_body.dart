@@ -4,6 +4,7 @@ import 'package:chat_app_firebase/features/profile/presentation/view/widget/prof
 import 'package:chat_app_firebase/features/profile/presentation/view/widget/save_profile_button.dart';
 import 'package:chat_app_firebase/features/profile/presentation/view/widget/text_field_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class ProfileBody extends StatelessWidget {
@@ -12,7 +13,7 @@ class ProfileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding:  EdgeInsets.all(20.0.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

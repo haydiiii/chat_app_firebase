@@ -2,6 +2,7 @@ import 'package:chat_app_firebase/core/constants/images/image_assets.dart';
 import 'package:chat_app_firebase/core/widget/custom_list_tile.dart';
 import 'package:chat_app_firebase/features/status/presentation/view/widget/text_updates.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CallsBody extends StatelessWidget {
   const CallsBody({super.key});
@@ -12,9 +13,9 @@ class CallsBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: TextUpdates(
+         Padding(
+          padding: EdgeInsets.all(8.0.r),
+          child: const TextUpdates(
             text: 'Recent',
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class BubbleChat extends StatelessWidget {
@@ -11,15 +12,15 @@ class BubbleChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        padding: const EdgeInsets.all(10),
+        padding:  EdgeInsets.all(10.r),
         itemCount: 10,
         itemBuilder: (context, index) {
           return Align(
             alignment:
                 isSentByMe ? Alignment.centerRight : Alignment.centerLeft,
             child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 5),
-              padding: const EdgeInsets.all(10),
+              margin:  EdgeInsets.symmetric(vertical: 5.r),
+              padding:  EdgeInsets.all(10.r),
               decoration: BoxDecoration(
                 color: isSentByMe ? AppColors.greenShadow : AppColors.greyColor,
                 borderRadius: BorderRadius.circular(10),

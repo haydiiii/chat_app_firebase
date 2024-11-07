@@ -7,6 +7,7 @@ import 'package:chat_app_firebase/features/auth/presentation/view/widget/passwor
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/register_now.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/text_title_login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class LoginBody extends StatefulWidget {
@@ -28,7 +29,7 @@ class _LoginBodyState extends State<LoginBody> {
       key: formKey,
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding:  EdgeInsets.all(20.r),
           child: SingleChildScrollView(
             child: Column(
               children: [

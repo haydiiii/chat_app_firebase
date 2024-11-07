@@ -1,5 +1,6 @@
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../core/constants/images/image_assets.dart';
@@ -18,8 +19,8 @@ class SplashBodyWidget extends StatelessWidget {
       children: [
         Image.asset(
          ImageAssets.logo,
-          width: 200,
-          height: 100,
+          width: 200.w,
+          height: 100.h,
         ),
         const Gap(10),
         Text('WhatsApp', style: titleText()),

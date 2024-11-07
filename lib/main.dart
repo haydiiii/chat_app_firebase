@@ -1,5 +1,6 @@
 import 'package:chat_app_firebase/features/splash_view/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -11,11 +12,17 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          textTheme: GoogleFonts.interTextTheme(),
-        ),
-        home: const SplashView());
+    return ScreenUtilInit(
+        designSize: const Size(720, 1421),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                textTheme: GoogleFonts.interTextTheme(),
+              ),
+              home: const SplashView());
+        });
   }
 }

@@ -1,6 +1,7 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/widget/custom_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class NewMessage extends StatelessWidget {
@@ -9,12 +10,12 @@ class NewMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.0.r),
       child: Row(
         children: [
           Expanded(
               child: Container(
-            padding: const EdgeInsets.only(left: 10),
+            padding:  EdgeInsets.only(left: 10.r),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(30)),
             child: Row(

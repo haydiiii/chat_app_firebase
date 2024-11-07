@@ -1,6 +1,7 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class CustomListTile extends StatelessWidget {
@@ -28,7 +29,7 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+      contentPadding: EdgeInsets.symmetric(vertical: 10.r, horizontal: 12.r),
       leading: CircleAvatar(
         backgroundImage: AssetImage(imageUrl),
         radius: 30,
@@ -59,8 +60,8 @@ class CustomListTile extends StatelessWidget {
                 const Gap(5),
                 if (numOfMessages != null && numOfMessages!.isNotEmpty)
                   Container(
-                    height: 25,
-                    width: 25,
+                    height: 25.h,
+                    width: 25.w,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: AppColors.primaryColor,
@@ -68,7 +69,7 @@ class CustomListTile extends StatelessWidget {
                     child: Text(
                       textAlign: TextAlign.center,
                       numOfMessages ?? '',
-                      style: const TextStyle(fontSize: 15, color: Colors.white),
+                      style: TextStyle(fontSize: 15.sp, color: Colors.white),
                     ),
                   )
               ],
