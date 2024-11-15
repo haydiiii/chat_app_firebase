@@ -1,5 +1,6 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // static const TextStyle title = TextStyle(
@@ -15,7 +16,7 @@ TextStyle titleText( {
   GoogleFonts? font,
 }) {
   return TextStyle(
-    fontSize: fontsize ?? 24,
+    fontSize: fontsize ?? 24.sp,
     fontWeight: fontWeight ?? FontWeight.bold,
     color: color ?? AppColors.primaryColor,
   );
@@ -27,7 +28,7 @@ TextStyle bodyText({
   FontWeight? fontWeight,
 }) {
   return TextStyle(
-    fontSize: fontsize ?? 16,
+    fontSize: fontsize ?? 16.sp,
     fontWeight: fontWeight ?? FontWeight.w600,
     color: color ?? AppColors.blackColor,
   );
@@ -39,7 +40,7 @@ TextStyle hashText({
   FontWeight? fontWeight,
 }) {
   return TextStyle(
-    fontSize: fontsize ?? 12,
+    fontSize: fontsize ?? 12.sp,
     fontWeight: fontWeight ?? FontWeight.w500,
     color: color ?? Colors.grey,
   );
@@ -51,7 +52,7 @@ TextStyle smallText({
   FontWeight? fontWeight,
 }) {
   return TextStyle(
-    fontSize: fontsize ?? 14,
+    fontSize: fontsize ?? 14.sp,
     fontWeight: fontWeight ?? FontWeight.normal,
     color: color ?? Colors.blueGrey,
   );

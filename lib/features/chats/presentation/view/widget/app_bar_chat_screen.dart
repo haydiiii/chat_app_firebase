@@ -4,6 +4,7 @@ import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:chat_app_firebase/core/widget/custom_icon_button.dart';
 import 'package:chat_app_firebase/features/chats/presentation/view/widget/chat_popupmenue_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class AppBarChatScreen extends StatelessWidget {
@@ -19,10 +20,10 @@ class AppBarChatScreen extends StatelessWidget {
       title: Row(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(50).r,
             child: Image.asset(
-              width: 50,
-              height: 50,
+              width: 50.w,
+              height: 50.h,
               ImageAssets.user2,
             ),
           ),

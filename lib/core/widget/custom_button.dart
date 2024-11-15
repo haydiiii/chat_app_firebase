@@ -1,6 +1,7 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomElvButton extends StatelessWidget {
   const CustomElvButton({
@@ -21,13 +22,13 @@ class CustomElvButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width,
-      height: height ?? 50,
+      width: width.w,
+      height: height?? 50.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15))),
+                borderRadius: BorderRadius.circular(15.r))),
         onPressed: onPressed,
         child: Text(
           text,

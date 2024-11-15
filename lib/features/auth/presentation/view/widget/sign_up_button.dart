@@ -1,5 +1,6 @@
 import 'package:chat_app_firebase/core/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({super.key});
@@ -9,8 +10,8 @@ class SignUpButton extends StatelessWidget {
     return CustomElvButton(
       onPressed: () {},
       text: 'Sign Up',
-      width: 490,
-      height: 50,
+      width: 490.w,
+      height: 50.h,
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:chat_app_firebase/features/auth/presentation/view/widget/phone_t
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/sign_up_button.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/widget/text_title_sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class SignUpBody extends StatefulWidget {
@@ -32,7 +33,7 @@ class _SignUpBodyState extends State<SignUpBody> {
       key: formKey,
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding:  EdgeInsets.all(20.r),
           child: SingleChildScrollView(
             child: Column(
               children: [

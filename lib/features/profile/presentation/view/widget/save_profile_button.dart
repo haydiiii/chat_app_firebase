@@ -1,6 +1,7 @@
 import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/theme/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class SaveProfileButton extends StatelessWidget {
@@ -13,10 +14,10 @@ class SaveProfileButton extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 50,
+        height: 50.h,
         decoration: BoxDecoration(
           color: AppColors.primaryColor,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30.r),
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

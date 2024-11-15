@@ -3,6 +3,7 @@ import 'package:chat_app_firebase/core/theme/colors.dart';
 import 'package:chat_app_firebase/core/widget/custom_list_tile.dart';
 import 'package:chat_app_firebase/features/status/presentation/view/widget/text_updates.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StatusBody extends StatelessWidget {
   const StatusBody({super.key});
@@ -32,11 +33,11 @@ class StatusBody extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: AppColors.primaryColor,
-                    width: 2,
+                    width: 2.w,
                   ),
                 ),
-                height: 20,
-                width: 20,
+                height: 20.h,
+                width: 20.w,
                 child: const Icon(
                   Icons.add,
                   color: AppColors.primaryColor,
@@ -46,8 +47,8 @@ class StatusBody extends StatelessWidget {
             ),
           )
         ]),
-        const Padding(
-          padding: EdgeInsets.all(8.0),
+         Padding(
+          padding: EdgeInsets.all(8.0.r),
           child: TextUpdates(text: 'Recent updates'),
         ),
         Expanded(
@@ -61,8 +62,8 @@ class StatusBody extends StatelessWidget {
                 );
               }),
         ),
-        const Padding(
-          padding: EdgeInsets.all(8.0),
+         Padding(
+          padding: EdgeInsets.all(8.0.r),
           child: TextUpdates(text: 'View updates'),
         ),
         Expanded(
