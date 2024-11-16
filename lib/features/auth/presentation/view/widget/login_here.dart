@@ -4,7 +4,8 @@ import 'package:chat_app_firebase/core/widget/custom_text_button.dart';
 import 'package:flutter/material.dart';
 
 class Loginhere extends StatelessWidget {
-  const Loginhere({super.key, required Null Function() onPressed});
+  final Function()? onPressed;
+  const Loginhere({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class Loginhere extends StatelessWidget {
           style: smallText(color: AppColors.blackColor)),
       CustomTextButton(
         text: 'Login here',
-        onPressed: () {},
+        onPressed: onPressed,
       )
     ]);
   }

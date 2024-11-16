@@ -10,7 +10,7 @@ class PhoneTextFfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       controller: phoneController,
-      hintText: 'Haidi Khattab',
+      hintText: '0102563588',
       label: 'Phone number',
       prefixIcon: Icons.phone_android_outlined,
       keyboardType: TextInputType.phone,

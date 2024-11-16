@@ -15,7 +15,14 @@ class NameTextFfield extends StatelessWidget {
       prefixIcon: Icons.person,
       keyboardType: TextInputType.name,
       obscureText: false,
-      validator: (value) => (value!.isEmpty) ? 'Please Enter Your Name' : null,
+      validator: (value) {
+        if ( value == null || value.isEmpty) {
+          return 'Please Enter Your Name';
+          
+        }else{
+          return null;
+        }
+      } ,
       onPressed: () {},
     );
   }

@@ -33,7 +33,7 @@ class _SignUpBodyState extends State<SignUpBody> {
       key: formKey,
       child: Center(
         child: Padding(
-          padding:  EdgeInsets.all(20.r),
+          padding: EdgeInsets.all(20.r),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -62,7 +62,13 @@ class _SignUpBodyState extends State<SignUpBody> {
                   },
                 ),
                 const Gap(15),
-                const SignUpButton(),
+                SignUpButton(
+                  formKey: formKey,
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  nameController: nameController,
+                  phoneController: phoneController,
+                ),
                 const Gap(10),
                 Loginhere(
                   onPressed: () {
