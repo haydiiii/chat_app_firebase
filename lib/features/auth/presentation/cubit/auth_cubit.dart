@@ -52,4 +52,41 @@ class AuthCubit extends Cubit<AuthStates> {
           error: 'An unexpected error occurred. Please try again.'));
     }
   }
+
+  Future<void> login({
+  required String password,
+  required String email,
+}) async {
+  try {
+    emit(LoginLoadingState());
+
+    final credential = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password);
+
+    emit(LoginSuccessState());
+  } on FirebaseAuthException catch (e) {
+    String errorMessage;
+
+    switch (e.code) {
+      case 'user-not-found':
+        errorMessage = 'No user found for that email.';
+        break;
+      case 'wrong-password':
+        errorMessage = 'Incorrect password provided for that user.';
+        break;
+      case 'invalid-email':
+        errorMessage = 'The email address is invalid.';
+        break;
+      default:
+        errorMessage = 'An unexpected error occurred. Please try again.';
+    }
+
+    emit(LoginErrorState(error: errorMessage));
+    log(errorMessage);
+  } catch (e) {
+    emit(LoginErrorState(error: e.toString()));
+    log(e.toString());
+  }
+}
+
 }

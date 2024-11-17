@@ -29,7 +29,7 @@ class _LoginBodyState extends State<LoginBody> {
       key: formKey,
       child: Center(
         child: Padding(
-          padding:  EdgeInsets.all(20.r),
+          padding: EdgeInsets.all(20.r),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -50,13 +50,16 @@ class _LoginBodyState extends State<LoginBody> {
                   },
                 ),
                 const Gap(15),
-                const LoginButton(),
+                LoginButton(
+                  emailController: emailController,
+                  formKey: formKey,
+                  passwordController: passwordController,
+                ),
                 const Gap(10),
                 RegisterNow(
                   onPressed: () {
-                    pushWithReplacement(context,const SignUpView() );
+                    pushWithReplacement(context, const SignUpView());
                   },
-
                 )
               ],
             ),
