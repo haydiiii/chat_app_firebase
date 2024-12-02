@@ -1,5 +1,7 @@
 import 'package:chat_app_firebase/core/functions/app_routing.dart';
+import 'package:chat_app_firebase/core/services/local_storage.dart';
 import 'package:chat_app_firebase/features/auth/presentation/view/login_view.dart';
+import 'package:chat_app_firebase/features/layout/presentation/view/bottom_nav_bar.dart';
 import 'package:chat_app_firebase/features/splash_view/presentation/view/widgets/splash_body_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,12 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
 
     Future.delayed(const Duration(seconds: 3), () {
-      pushWithReplacement(context, const LoginView());
+      final token = AppLocalStorage.getCachData(key: AppLocalStorage.token);
+      if (token != null && token.isNotEmpty) {
+        pushWithReplacement(context, const BottomNavBar());
+      } else {
+        pushWithReplacement(context, const LoginView());
+      }
     });
   }
 

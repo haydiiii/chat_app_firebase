@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:chat_app_firebase/core/services/local_storage.dart';
 import 'package:chat_app_firebase/features/auth/presentation/cubit/auth_states.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,6 +20,8 @@ class AuthCubit extends Cubit<AuthStates> {
           .createUserWithEmailAndPassword(email: email, password: password);
 
       User user = userCredential.user!;
+      await AppLocalStorage.cacheData(
+          key: AppLocalStorage.token, value: user.uid);
 
       await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
         'name': name,
@@ -54,39 +57,41 @@ class AuthCubit extends Cubit<AuthStates> {
   }
 
   Future<void> login({
-  required String password,
-  required String email,
-}) async {
-  try {
-    emit(LoginLoadingState());
+    required String password,
+    required String email,
+  }) async {
+    try {
+      emit(LoginLoadingState());
 
-    final credential = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: email, password: password);
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      User user = credential.user!;
+      await AppLocalStorage.cacheData(
+          key: AppLocalStorage.token, value: user.uid);
 
-    emit(LoginSuccessState());
-  } on FirebaseAuthException catch (e) {
-    String errorMessage;
+      emit(LoginSuccessState());
+    } on FirebaseAuthException catch (e) {
+      String errorMessage;
 
-    switch (e.code) {
-      case 'user-not-found':
-        errorMessage = 'No user found for that email.';
-        break;
-      case 'wrong-password':
-        errorMessage = 'Incorrect password provided for that user.';
-        break;
-      case 'invalid-email':
-        errorMessage = 'The email address is invalid.';
-        break;
-      default:
-        errorMessage = 'An unexpected error occurred. Please try again.';
+      switch (e.code) {
+        case 'user-not-found':
+          errorMessage = 'No user found for that email.';
+          break;
+        case 'wrong-password':
+          errorMessage = 'Incorrect password provided for that user.';
+          break;
+        case 'invalid-email':
+          errorMessage = 'The email address is invalid.';
+          break;
+        default:
+          errorMessage = 'An unexpected error occurred. Please try again.';
+      }
+
+      emit(LoginErrorState(error: errorMessage));
+      log(errorMessage);
+    } catch (e) {
+      emit(LoginErrorState(error: e.toString()));
+      log(e.toString());
     }
-
-    emit(LoginErrorState(error: errorMessage));
-    log(errorMessage);
-  } catch (e) {
-    emit(LoginErrorState(error: e.toString()));
-    log(e.toString());
   }
-}
-
 }
