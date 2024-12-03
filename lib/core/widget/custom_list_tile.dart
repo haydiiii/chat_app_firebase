@@ -10,7 +10,7 @@ class CustomListTile extends StatelessWidget {
   final String? message;
   final String? time;
   final IconData? icon;
-  final String? numOfMessages;
+  //final String? numOfMessages;
   final double? sizeOfIcon;
   final Function()? onPressedIcon;
 
@@ -21,7 +21,7 @@ class CustomListTile extends StatelessWidget {
     this.message,
     this.time,
     this.icon,
-    this.numOfMessages,
+    //   this.numOfMessages,
     this.sizeOfIcon,
     this.onPressedIcon,
   });
@@ -58,20 +58,20 @@ class CustomListTile extends StatelessWidget {
                   icon: Icon(icon),
                 ),
                 const Gap(5),
-                if (numOfMessages != null && numOfMessages!.isNotEmpty)
-                  Container(
-                    height: 25.h,
-                    width: 25.w,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.primaryColor,
-                    ),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      numOfMessages ?? '',
-                      style: TextStyle(fontSize: 15.sp, color: Colors.white),
-                    ),
-                  )
+                //if (numOfMessages != null && numOfMessages!.isNotEmpty)
+                // Container(
+                //   height: 25.h,
+                //   width: 25.w,
+                //   decoration: const BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: AppColors.primaryColor,
+                //   ),
+                //   child: Text(
+                //     textAlign: TextAlign.center,
+                //  //   numOfMessages ?? '',
+                //     style: TextStyle(fontSize: 15.sp, color: Colors.white),
+                //   ),
+                // )
               ],
             ),
           ),

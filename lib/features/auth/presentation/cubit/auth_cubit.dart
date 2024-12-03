@@ -23,12 +23,13 @@ class AuthCubit extends Cubit<AuthStates> {
       await AppLocalStorage.cacheData(
           key: AppLocalStorage.token, value: user.uid);
 
-      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-        'name': name,
-        'email': email,
-        'phone': phone,
-        'uid': user.uid,
-      });
+   await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+  'name': name,
+  'email': email,
+  'phone': phone,
+  'uid': user.uid,
+});
+
 
       emit(SignUpSuccessState());
     } on FirebaseAuthException catch (e) {
@@ -68,6 +69,7 @@ class AuthCubit extends Cubit<AuthStates> {
       User user = credential.user!;
       await AppLocalStorage.cacheData(
           key: AppLocalStorage.token, value: user.uid);
+          
 
       emit(LoginSuccessState());
     } on FirebaseAuthException catch (e) {

@@ -4,7 +4,8 @@ import 'package:chat_app_firebase/features/chats/presentation/view/widget/new_me
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+  final String userId;
+  const ChatScreen({super.key, required this.userId});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ChatScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          BubbleChat(),
+          Expanded(child: BubbleChat()),
           NewMessage(),
         ],
       ),
